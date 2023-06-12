@@ -1,0 +1,67 @@
+body {
+  background-color: #eaea8c;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: fantasy;
+  color: #24440f;
+  text-align: center;
+}
+
+#scoreCounter {
+  font-size: 30px;
+  font-family: fantasy;
+  color: #24440f;
+  text-align: center;
+}
+
+.boardGame {
+  text-align: center;
+}
+
+#gameGrid {
+  right: 75%;
+  background-color: #acb4cc;
+  border: 8px solid  #745c3c;
+  border-radius: 16px;
+}
+
+.directionButton {
+  text-align: center;
+}
+
+#playAgain {
+  text-align: center;
+  justify-content: center;
+  color:#24440f;
+  border: 4px solid  #745c3c;
+  border-radius: 16px;
+  font-size: 20px;
+  padding: 8px;
+  font-family: fantasy;
+  background-color: #acb4cc;
+  /* display: flex;
+  margin-left: 788px; */
+  display: block;
+  margin: 0 auto;
+}
+
+#playAgain:hover {
+  background-color: #eaea8c;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.snakePart {
+  height: 20px;
+  width: 20px;
+  background-color: #24440f;
+}
+
+.snakeBody {
+  height: 20px;
+  width: 20px;
+  background-color: #24440f;
+}
+
