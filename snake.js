@@ -89,7 +89,7 @@ drawApple () {
   while (this.gameGridArr[this.randomAppleX][this.randomAppleY] == this.snakeBodyPart || this.gameGridArr[this.randomAppleX][this.randomAppleY] == this.gameGridBoundaries);
   
   this.gameGridArr[this.randomAppleX][this.randomAppleY] = this.appleFruit;
-  ctx.fillStyle = "red";
+  ctx.fillStyle = "blue";
   ctx.fillRect(this.randomAppleX, this.randomAppleY, this.squareSize, this.squareSize);
 }
 
