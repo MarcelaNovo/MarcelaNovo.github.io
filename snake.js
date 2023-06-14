@@ -5,7 +5,7 @@ let scoreCounter = document.getElementById("scoreCounter");
 let playAgain = document.getElementById("playAgain");
 
 // Get the canvas context for drawing
-// const ctx = gameGrid.getContext("2d");
+const ctx = gameGrid.getContext("2d");
 
 let score = 0;
 let gameOver = false;
@@ -340,7 +340,13 @@ playAgain.addEventListener("click", () =>
   }
 );
 
+const audio1 = new Audio();
 
+audio1.src = 'howler.js\tests\audio\sound1.mp3';
+
+audio1.volume = 5;
+
+audio1.play();
 
 
 
