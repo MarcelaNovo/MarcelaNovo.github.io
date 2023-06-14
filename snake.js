@@ -5,7 +5,7 @@ let scoreCounter = document.getElementById("scoreCounter");
 let playAgain = document.getElementById("playAgain");
 
 // Get the canvas context for drawing
-// const ctx = gameGrid.getContext("2d");
+const ctx = gameGrid.getContext("2d");
 
 gameGrid.width = 400;
 gameGrid.height = 400; 
@@ -39,7 +39,6 @@ class SnakeDLL {
     this.length = 0,
     this.tail = this.head;
     this.gameGrid = document.getElementById("gameGrid");
-    this.ctx = this.gameGrid.getContext("2d");
     this.gameGridHeight = 400;
     this.gameGridWidth = 400; 
     this.gameGridArr = [];
@@ -301,10 +300,7 @@ startGame () {
 gameLoop () {
     mainGameTimer = setInterval(() => {
     this.move();
-    this.updateGameGrid();
-    
-    // music
-    // 4    
+    this.updateGameGrid();  
   
     //**GAME OVER**/
     if (gameOver)
