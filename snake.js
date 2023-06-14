@@ -5,7 +5,11 @@ let scoreCounter = document.getElementById("scoreCounter");
 let playAgain = document.getElementById("playAgain");
 
 // Get the canvas context for drawing
-const ctx = gameGrid.getContext("2d");
+// const ctx = gameGrid.getContext("2d");
+
+gameGrid.width = 400;
+gameGrid.height = 400; 
+
 
 let score = 0;
 let gameOver = false;
@@ -35,10 +39,9 @@ class SnakeDLL {
     this.length = 0,
     this.tail = this.head;
     this.gameGrid = document.getElementById("gameGrid");
+    this.ctx = this.gameGrid.getContext("2d");
     this.gameGridHeight = 400;
-    this.gameGridWidth = 400;
-    this.gameGrid.width = 400;
-    this.gameGrid.height = 400;  
+    this.gameGridWidth = 400; 
     this.gameGridArr = [];
     this.direction = 'right';
     this.squareSize = 20;
@@ -317,6 +320,7 @@ gameLoop () {
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 
+document.addEventListener("DOMContentLoaded", () => {
 // to create a new SNAKE object
 let snakeDLL = new SnakeDLL();
 snakeDLL.startGame();
@@ -340,9 +344,15 @@ playAgain.addEventListener("click", () =>
   }
 );
 
+const audio1 = new Audio();
 
+audio1.src = 'howler.js\tests\audio\sound1.mp3';
 
+audio1.volume = 1;
 
+audio1.play();
+
+});
 
 
 
