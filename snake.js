@@ -318,6 +318,7 @@ gameLoop () {
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 
+document.addEventListener("DOMContentLoaded", () => {
 // to create a new SNAKE object
 let snakeDLL = new SnakeDLL();
 snakeDLL.startGame();
@@ -349,7 +350,7 @@ audio1.volume = 5;
 
 audio1.play();
 
-
+});
 
 
 
