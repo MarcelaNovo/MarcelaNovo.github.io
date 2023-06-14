@@ -5,7 +5,7 @@ let scoreCounter = document.getElementById("scoreCounter");
 let playAgain = document.getElementById("playAgain");
 
 // Get the canvas context for drawing
-// const ctx = gameGrid.getContext("2d");
+const ctx = gameGrid.getContext("2d");
 
 let score = 0;
 let gameOver = false;
@@ -326,7 +326,7 @@ snakeDLL.gameLoop();
 playAgain.addEventListener("click", () =>
   {
     score = 0;
-    // gameOver = false;
+    gameOver = false;
     scoreCounter.innerHTML = "Your score: " + score;
 
     clearInterval(mainGameTimer);
