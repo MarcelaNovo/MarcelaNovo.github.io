@@ -299,12 +299,9 @@ gameLoop () {
     mainGameTimer = setInterval(() => {
     this.move();
     this.updateGameGrid();
-
-    document.body.addEventListener("click", () => {
-      let mySound = new Audio('mixkit-game-level-music-689.wav');
-      mySound.play();
-    }, true);
     
+    // music
+    // 4    
   
     //**GAME OVER**/
     if (gameOver)
