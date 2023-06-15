@@ -53,14 +53,14 @@ class SnakeDLL {
   // INIT FUNCTION
 drawInitialGameGrid () {
 scoreCounter.innerHTML = "Your score: " +  score;
-for (let i = 0; i < this.gameGridHeight; i++)
+for (let i = 0; i < this.gameGrid.height; i++)
   {
     // adding a second dimension for the whole game grid
     this.gameGridArr[i] = [];
 
-    for (let j = 0; j < this.gameGridWidth; j++)
+    for (let j = 0; j < this.gameGrid.width; j++)
       {
-        if (i == 0 || i == this.gameGridHeight - 1 || j == 0 || j == this.gameGridWidth - 1)
+        if (i == 0 || i == this.gameGrid.height - 1 || j == 0 || j == this.gameGrid.width - 1)
         {
           this.gameGridArr[i][j] = this.gameGridBoundaries;
         }
