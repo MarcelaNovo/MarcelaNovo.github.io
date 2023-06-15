@@ -38,7 +38,8 @@ class SnakeDLL {
     this.gameGridHeight = 400;
     this.gameGridWidth = 400;
     this.gameGrid.width = 400;
-    this.gameGrid.height = 400;  
+    this.gameGrid.height = 400;
+    this.ctx = ctx;  
     this.gameGridArr = [];
     this.direction = 'right';
     this.squareSize = 20;
@@ -89,8 +90,8 @@ drawApple () {
   while (this.gameGridArr[this.randomAppleX][this.randomAppleY] == this.snakeBodyPart || this.gameGridArr[this.randomAppleX][this.randomAppleY] == this.gameGridBoundaries);
   
   this.gameGridArr[this.randomAppleX][this.randomAppleY] = this.appleFruit;
-  ctx.fillStyle = "red";
-  ctx.fillRect(this.randomAppleX, this.randomAppleY, this.squareSize, this.squareSize);
+  this.ctx.fillStyle = "red";
+  this.ctx.fillRect(this.randomAppleX, this.randomAppleY, this.squareSize, this.squareSize);
 }
 
 
