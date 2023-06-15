@@ -6,8 +6,10 @@ let scoreCounter = document.getElementById("scoreCounter");
 
 let playAgain = document.getElementById("playAgain");
 
+
+//CANVAS
 // Get the canvas context for drawing
-const ctx = gameGrid.getContext("2d");
+// const ctx = gameGrid.getContext("2d");
 
 gameGrid.width = 400;
 gameGrid.height = 400; 
@@ -41,6 +43,7 @@ class SnakeDLL {
     this.length = 0,
     this.tail = this.head;
     this.gameGrid = document.getElementById("gameGrid");
+    this.ctx = this.gameGrid.getContext("2d");
     this.gameGridHeight = 400;
     this.gameGridWidth = 400; 
     this.gameGridArr = [];
@@ -93,8 +96,8 @@ drawApple () {
   while (this.gameGridArr[this.randomAppleX][this.randomAppleY] == this.snakeBodyPart || this.gameGridArr[this.randomAppleX][this.randomAppleY] == this.gameGridBoundaries);
   
   this.gameGridArr[this.randomAppleX][this.randomAppleY] = this.appleFruit;
-  ctx.fillStyle = "red";
-  ctx.fillRect(this.randomAppleX, this.randomAppleY, this.squareSize, this.squareSize);
+  this.ctx.fillStyle = "red";
+  this.ctx.fillRect(this.randomAppleX, this.randomAppleY, this.squareSize, this.squareSize);
 }
 
 
@@ -127,9 +130,9 @@ iterateThroughSnakeDLL() {
   {
     if (this.gameGridArr[currentNode.snakeX][currentNode.snakeY] == 2)
     {
-      ctx.fillStyle = "#24440f";
-      ctx.strokeStyle = "#eaea8c";
-      ctx.fillRect(this.head.snakeX, this.head.snakeY, this.squareSize, this.squareSize);
+      this.ctx.fillStyle = "#24440f";
+      this.ctx.strokeStyle = "#eaea8c";
+      this.ctx.fillRect(this.head.snakeX, this.head.snakeY, this.squareSize, this.squareSize);
     } 
     currentNode = currentNode.next;
   }
@@ -138,9 +141,9 @@ iterateThroughSnakeDLL() {
 removeTail() {
   this.gameGridArr[this.tail.snakeX][this.tail.snakeY] = 0;
   let removedTail = this.tail;
-  ctx.strokeStyle = 'transparent';
-  ctx.clearRect(this.tail.snakeX, this.tail.snakeY, this.squareSize,this.squareSize);
-  ctx.strokeRect(this.tail.snakeX, this.tail.snakeY, this.squareSize, this.squareSize);
+  this.ctx.strokeStyle = 'transparent';
+  this.ctx.clearRect(this.tail.snakeX, this.tail.snakeY, this.squareSize,this.squareSize);
+  this.ctx.strokeRect(this.tail.snakeX, this.tail.snakeY, this.squareSize, this.squareSize);
 
   // if the list is empty
   if (!this.tail)
@@ -232,7 +235,7 @@ replaceSnakeDLL (newDLL) {
 
   while (currNode) {
 
-    ctx.clearRect(currNode.snakeX, currNode.snakeY, this.squareSize, this.squareSize);
+    this.ctx.clearRect(currNode.snakeX, currNode.snakeY, this.squareSize, this.squareSize);
 
     let nextNode = currNode.previous;
     currNode.next = null;
@@ -289,7 +292,7 @@ move () {
 ateApple () {
   score += 10;
   scoreCounter.innerHTML = "Your score: " + score;
-  ctx.clearRect(this.randomAppleX, this.randomAppleY, this.squareSize, this.squareSize);
+  this.ctx.clearRect(this.randomAppleX, this.randomAppleY, this.squareSize, this.squareSize);
   this.drawApple(); 
 }
 
