@@ -46,9 +46,8 @@ class SnakeDLL {
     this.tail = this.head;
     this.gameGrid = document.getElementById("gameGrid");
     // this.ctx = this.gameGrid.getContext("2d");
-    this.gameGridHeight = 400;
-    this.gameGridWidth = 400; 
-    this.gameGridWidth = 400;
+    // this.gameGridHeight = 400;
+    // this.gameGridWidth = 400; 
     this.gameGrid.width = 400;
     this.gameGrid.height = 400;
     this.ctx = ctx;  
