@@ -1,5 +1,7 @@
 'use strict'
 
+//commit completely full functioning snake 6974292
+
 let scoreCounter = document.getElementById("scoreCounter");
 
 let playAgain = document.getElementById("playAgain");
