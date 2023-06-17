@@ -1,13 +1,14 @@
 'use strict'
 
 //commit completely full functioning snake 6974292
+document.addEventListener("DOMContentLoaded", () => {
 
 let scoreCounter = document.getElementById("scoreCounter");
 
 let playAgain = document.getElementById("playAgain");
 
 // Get the canvas context for drawing
-const ctx = gameGrid.getContext("2d");
+const ctx = this.gameGrid.getContext("2d");
 
 
 //CANVAS
@@ -326,7 +327,7 @@ gameLoop () {
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 
-document.addEventListener("DOMContentLoaded", () => {
+
 // to create a new SNAKE object
 let snakeDLL = new SnakeDLL();
 snakeDLL.startGame();
