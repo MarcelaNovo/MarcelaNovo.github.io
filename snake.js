@@ -7,11 +7,11 @@ let scoreCounter = document.getElementById("scoreCounter");
 
 let playAgain = document.getElementById("playAgain");
 
-// Get the canvas context for drawing
-const ctx = this.gameGrid.getContext("2d");
+
 
 
 //CANVAS
+let ctx = this.gameGrid.getContext("2d");
 
 
 gameGrid.width = 400;
@@ -86,6 +86,7 @@ for (let i = 0; i < this.gameGrid.height; i++)
 } 
 
 setUpBoardGame () {
+  // Get the canvas context for drawing
   this.drawInitialGameGrid();
   this.addToHead(100, 280, this.squareSize, this.squareSize);
   this.addToHead(100, 300, this.squareSize, this.squareSize);
