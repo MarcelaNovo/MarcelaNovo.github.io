@@ -353,15 +353,15 @@ playAgain.addEventListener("click", () =>
   }
 );
 
-const audio1 = new Audio();
+// const audio1 = new Audio();
 
-audio1.src = 'howler.js\tests\audio\sound1.mp3';
+// audio1.src = 'howler.js\tests\audio\sound1.mp3';
 
-audio1.volume = 1;
+// audio1.volume = 1;
 
-audio1.play();
+// audio1.play();
 
-});
+// });
 
 
 
