@@ -1,6 +1,7 @@
 'use strict'
 
 //commit completely full functioning snake 6974292
+//test
 document.addEventListener("DOMContentLoaded", () => {
 
 let scoreCounter = document.getElementById("scoreCounter");
