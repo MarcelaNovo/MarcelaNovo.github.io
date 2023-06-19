@@ -351,7 +351,17 @@ playAgain.addEventListener("click", () =>
     newNewSnakeDLL.startGame();
     newNewSnakeDLL.gameLoop();
   }
-);
+  );
+  
+  
+var sound1 = new Howl({
+  src: ['sound1.mp3']
+});
+
+setTimeout(() => {
+  sound1.play();
+}, 3000);
+
 
 // const audio1 = new Audio();
 
@@ -361,7 +371,7 @@ playAgain.addEventListener("click", () =>
 
 // audio1.play();
 
-// });
+});
 
 
 
