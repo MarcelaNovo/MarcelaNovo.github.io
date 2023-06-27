@@ -8,6 +8,9 @@ let scoreCounter = document.getElementById("scoreCounter");
 
 let playAgain = document.getElementById("playAgain");
 
+let ateAppleSound, gameOverSound, resetGameSound = false;
+let gameLoopSound = true;
+
 
 
 
@@ -106,6 +109,7 @@ drawApple () {
   this.gameGridArr[this.randomAppleX][this.randomAppleY] = this.appleFruit;
   this.ctx.fillStyle = "red";
   this.ctx.fillRect(this.randomAppleX, this.randomAppleY, this.squareSize, this.squareSize);
+  this.ctx.roundRect = (this.randomAppleX, this.randomAppleY,this.squareSize, this.squareSize, [0, 30, 50, 60]);
 }
 
 
@@ -298,9 +302,18 @@ move () {
 }
 
 ateApple () {
+  ateAppleSound = new Howl({
+    src: ['07 Home Run.mp3']
+  });
+  
+  // setTimeout(() => {
+    ateAppleSound.play();
+  // }, 1000);
+  
   score += 10;
   scoreCounter.innerHTML = "Your score: " + score;
   this.ctx.clearRect(this.randomAppleX, this.randomAppleY, this.squareSize, this.squareSize);
+
   this.drawApple(); 
 }
 
@@ -313,11 +326,27 @@ startGame () {
 gameLoop () {
     mainGameTimer = setInterval(() => {
     this.move();
-    this.updateGameGrid();  
+    this.updateGameGrid();
+    // gameLoopSound = new Howl({
+    //   src: ['04 Main BGM.mp3']
+    //   });
+    
+    // if (gameLoopSound == true)
+    // {
+    //   gameLoopSound.play();
+    // }
+    
   
     //**GAME OVER**/
     if (gameOver)
     {
+      gameLoopSound = false;
+     
+      gameOverSound = new Howl({
+        src: ['Game Set Over.mp3']
+      });
+      gameOverSound.play();
+      
       scoreCounter.innerHTML = "GAME OVER";
       clearInterval(mainGameTimer);
     }
@@ -354,22 +383,12 @@ playAgain.addEventListener("click", () =>
   );
   
   
-var sound1 = new Howl({
-  src: ['sound1.mp3']
+resetGameSound = new Howl({
+  src: ['09 Time.mp3']
 });
 
-setTimeout(() => {
-  sound1.play();
-}, 3000);
+  resetGameSound.play();
 
-
-// const audio1 = new Audio();
-
-// audio1.src = 'howler.js\tests\audio\sound1.mp3';
-
-// audio1.volume = 1;
-
-// audio1.play();
 
 });
 
