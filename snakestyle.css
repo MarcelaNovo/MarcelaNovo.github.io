@@ -3,15 +3,15 @@ body {
 }
 
 h1 {
-  font-size: 50px;
-  font-family: fantasy;
+  font-size: 80px;
+  font-family: 'Press Start 2P', cursive;
   color: #24440f;
   text-align: center;
 }
 
 #scoreCounter {
   font-size: 30px;
-  font-family: fantasy;
+  font-family: 'Press Start 2P', cursive;
   color: #24440f;
   text-align: center;
 }
@@ -37,9 +37,9 @@ h1 {
   color:#24440f;
   border: 4px solid  #745c3c;
   border-radius: 16px;
-  font-size: 20px;
+  font-size: 12px;
   padding: 8px;
-  font-family: fantasy;
+  font-family: 'Press Start 2P', cursive;
   background-color: #acb4cc;
   /* display: flex;
   margin-left: 788px; */
